@@ -1,5 +1,5 @@
 # selfMode
-battery alert for linux -  It alerts at 30% battery stage.
+battery alert for linux -  It alerts at 25% battery stage.
 
 #Installing Steps (Tested in Linux Mint)
 
