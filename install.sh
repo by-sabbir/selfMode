@@ -9,6 +9,7 @@ cd ..
 echo "Removing files"
 sleep 1
 sudo rm -rf selfMode
+cd ..
 echo
 sleep 1
 echo "Done!"
