@@ -13,7 +13,7 @@ do
 		#Charging Mode
 		if [ "$data" == "Charging" ]
 		then
-			#echo "The PC is Charging 	#Level = $bat0 %"
+			echo "The PC is Charging 	#Level = $bat0 %"
 			if [ "$bat0" == "100" ]
 			then
 				echo "__________________________"
@@ -21,10 +21,10 @@ do
 				echo "Full Charge"
 				echo "__________________________"
 			fi
-		#Dischargin Mode
+		#Discharging Mode
 		elif [ "$data" == "Discharging" ]
 		then
-			#echo "The pc is Discharging	#Level = $bat0 %"
+			echo "The pc is Discharging	#Level = $bat0 %"
 			if [ "$bat0" == "98" ]
 			then
 				cvlc --play-and-exit alart.mp3
