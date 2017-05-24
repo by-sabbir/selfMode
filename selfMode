@@ -1,0 +1,46 @@
+#!/bin/bash
+
+bat0=$(cat /sys/class/power_supply/BAT0/capacity)
+echo "Battery capacity = $bat0"
+
+while :
+do
+	bat0=$(cat /sys/class/power_supply/BAT0/capacity)
+	if [ -r /sys/class/power_supply/BAT0/status ]
+	then
+		data=$(cat /sys/class/power_supply/BAT0/status)
+		
+		#Charging Mode
+		if [ "$data" == "Charging" ]
+		then
+			#echo "The PC is Charging 	#Level = $bat0 %"
+			if [ "$bat0" == "100" ]
+			then
+				echo "__________________________"
+				echo
+				echo "Full Charge"
+				echo "__________________________"
+				cvlc --play-and-exit alart.mp3
+			fi
+		#Dischargin Mode
+		elif [ "$data" == "Discharging" ]
+		then
+			#echo "The pc is Discharging	#Level = $bat0 %"
+			if [ "$bat0" == "30" ]
+			then
+				cvlc --play-and-exit alart.mp3
+				sleep 10
+				echo "Taking Counter Measures"
+				shutdown -P
+			fi
+		#Unknown Stat
+		elif [ "$data" == "Unknown" ]
+		then
+			echo "Unkown status"
+		
+		fi
+	else
+		echo "The Mode is not Readable"
+	fi
+	sleep 10
+done
