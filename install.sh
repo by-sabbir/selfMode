@@ -6,8 +6,9 @@ sudo cp selfMode /bin
 sudo chmod 755 /bin/selfMode
 echo
 cd ..
-sudo rm -rf selfMode
 echo "Removing files"
+sleep 1
+sudo rm -rf selfMode
 echo
-sleep 2
+sleep 1
 echo "Done!"
