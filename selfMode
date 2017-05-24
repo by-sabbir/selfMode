@@ -25,7 +25,7 @@ do
 		elif [ "$data" == "Discharging" ]
 		then
 			echo "The pc is Discharging	#Level = $bat0 %"
-			if [ "$bat0" == "30" ]
+			if [ "$bat0" == "98" ]
 			then
 				cvlc --play-and-exit /opt/alart.mp3
 				sleep 10
