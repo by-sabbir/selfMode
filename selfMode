@@ -27,7 +27,7 @@ do
 			echo "The pc is Discharging	#Level = $bat0 %"
 			if [ "$bat0" == "30" ]
 			then
-				cvlc --play-and-exit alart.mp3
+				cvlc --play-and-exit /opt/alart.mp3
 				sleep 10
 				echo "Taking Counter Measures"
 				systemctl shutdown -i
