@@ -30,7 +30,10 @@ do
 				cvlc --play-and-exit /opt/alart.mp3
 				sleep 10
 				echo "Taking Counter Measures"
-				systemctl shutdown -i
+			fi
+			if [ "$bat0" == "15" ]
+			then
+				systemctl poweroff -i
 			fi
 		#Unknown Stat
 		elif [ "$data" == "Unknown" ]
